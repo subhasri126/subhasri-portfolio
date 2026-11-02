@@ -33,14 +33,14 @@ function Portrait() {
       <div className="relative aspect-[4/5] overflow-hidden border border-line bg-panel media-frame">
         {!failed ? (
           <img
-            src="/images/profile.jpg"
+            src={`${import.meta.env.BASE_URL}images/profile.jpg`}
             alt="Subhasri S., software developer"
             decoding="async"
             onError={() => setFailed(true)}
             className="h-full w-full object-cover"
           />
         ) : (
-          /* Designed placeholder — replaced automatically once /public/images/profile.jpg exists */
+          /* Designed placeholder — replaced automatically once the profile image is available */
           <div className="img-pattern flex h-full w-full flex-col items-center justify-center gap-6">
             <span className="font-display text-[7rem] font-light italic leading-none text-paper/90">
               S<span className="text-accent">.</span>
