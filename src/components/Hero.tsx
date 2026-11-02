@@ -34,7 +34,8 @@ function Portrait() {
         {!failed ? (
           <img
             src="/images/profile.jpg"
-            alt="Portrait of Subhasri S."
+            alt="Subhasri S., software developer"
+            decoding="async"
             onError={() => setFailed(true)}
             className="h-full w-full object-cover"
           />
@@ -53,7 +54,7 @@ function Portrait() {
 
       {/* caption */}
       <div className="mt-6 flex items-center justify-between gap-4 font-mono text-[10.5px] tracking-[0.14em] text-faint">
-        <span className="min-w-0 break-all">/public/images/profile.jpg</span>
+        <span className="min-w-0 break-all">/images/profile.jpg</span>
         <span aria-hidden="true" className="h-px flex-1 bg-line" />
         <span>4 : 5</span>
       </div>
