@@ -288,3 +288,76 @@ body {
   transform: translateX(0);
 }
 
+/* ─── Responsive safeguards ───────────────────────── */
+@media (max-width: 1024px) {
+  .noise::before {
+    opacity: 0.02;
+  }
+
+  .media-frame:hover img {
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .noise {
+    overflow-x: clip;
+  }
+
+  .mono-label {
+    font-size: 0.625rem;
+    letter-spacing: 0.16em;
+  }
+
+  .img-pattern {
+    background-size: 22px 22px;
+  }
+
+  .noise::before {
+    display: none;
+  }
+
+  .marquee-track {
+    animation-duration: 58s;
+  }
+
+  [data-hero] {
+    min-height: 0;
+  }
+
+  [data-hero] h1 {
+    overflow-wrap: anywhere;
+  }
+
+  .media-frame,
+  .media-frame img {
+    max-width: 100%;
+  }
+
+  #contact a,
+  #contact button {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 430px) {
+  .mono-label {
+    letter-spacing: 0.12em;
+  }
+
+  .log-line {
+    align-items: flex-start;
+  }
+
+  .log-line > span:last-child {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot,
+  .caret,
+  .scroll-line {
+    animation: none;
+  }
+}

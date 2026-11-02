@@ -72,7 +72,7 @@ export default function Contact() {
               <div className="mt-11 flex flex-wrap items-center gap-4">
                 <a
                   href={`mailto:${profile.email}`}
-                  className="group inline-flex h-12 items-center gap-3 bg-accent px-7 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-ink transition-colors hover:bg-accent2"
+                  className="group inline-flex h-12 w-full items-center justify-center gap-3 bg-accent px-4 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-ink transition-colors hover:bg-accent2 sm:w-auto sm:px-7"
                 >
                   <MailIcon size={14} />
                   {profile.email}
@@ -81,7 +81,7 @@ export default function Contact() {
                   onClick={copyEmail}
                   aria-live="polite"
                   className={cn(
-                    "inline-flex h-12 w-32 items-center justify-center gap-2.5 border font-mono text-[12px] uppercase tracking-[0.16em] transition-colors",
+                    "inline-flex h-12 w-full items-center justify-center gap-2.5 border font-mono text-[12px] uppercase tracking-[0.16em] transition-colors sm:w-32",
                     copied
                       ? "border-accent/70 text-accent2"
                       : "border-line2 text-paper hover:border-accent/70 hover:text-accent2"
@@ -93,7 +93,7 @@ export default function Contact() {
                 <a
                   href={profile.resumePath}
                   download={profile.resumeFileName}
-                  className="inline-flex h-12 items-center gap-3 border border-line2 px-7 font-mono text-[12px] uppercase tracking-[0.16em] text-paper transition-colors hover:border-accent/70 hover:text-accent2"
+                  className="inline-flex h-12 w-full items-center justify-center gap-3 border border-line2 px-4 font-mono text-[12px] uppercase tracking-[0.16em] text-paper transition-colors hover:border-accent/70 hover:text-accent2 sm:w-auto sm:px-7"
                 >
                   <FileDown size={14} strokeWidth={1.75} />
                   Résumé

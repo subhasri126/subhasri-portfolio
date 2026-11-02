@@ -53,7 +53,7 @@ function Portrait() {
 
       {/* caption */}
       <div className="mt-6 flex items-center justify-between gap-4 font-mono text-[10.5px] tracking-[0.14em] text-faint">
-        <span>/public/images/profile.jpg</span>
+        <span className="min-w-0 break-all">/public/images/profile.jpg</span>
         <span aria-hidden="true" className="h-px flex-1 bg-line" />
         <span>4 : 5</span>
       </div>
@@ -114,11 +114,11 @@ export default function Hero({ booted }: { booted: boolean }) {
   return (
     <section id="top" data-hero className="relative overflow-hidden pt-32 pb-16 md:pt-44 md:pb-24">
       <div className="mx-auto max-w-[1240px] px-6 md:px-10">
-        <div className="grid items-start gap-14 lg:grid-cols-12 lg:gap-8">
+        <div className="grid min-w-0 items-start gap-14 lg:grid-cols-12 lg:gap-8">
           {/* ── Left column ── */}
-          <div className="lg:col-span-7 lg:pt-6">
+          <div className="min-w-0 lg:col-span-7 lg:pt-6">
             <div {...stage(entered, 0)} className={cn(stage(entered, 0).className, "inline-flex")}>
-              <span className="flex items-center gap-2.5 border border-line bg-panel/70 px-3.5 py-2 font-mono text-[10.5px] uppercase tracking-[0.18em] text-mute">
+              <span className="flex max-w-full flex-wrap items-center gap-2.5 border border-line bg-panel/70 px-3.5 py-2 font-mono text-[10.5px] uppercase tracking-[0.18em] text-mute">
                 <span className="status-dot h-1.5 w-1.5 rounded-full bg-accent" />
                 {profile.availability}
               </span>
@@ -148,7 +148,7 @@ export default function Hero({ booted }: { booted: boolean }) {
             <div {...stage(entered, 340)} className={cn(stage(entered, 340).className, "mt-10 flex flex-wrap items-center gap-4")}>
               <a
                 href="#projects"
-                className="group inline-flex h-12 items-center gap-3 bg-accent px-7 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-ink transition-colors hover:bg-accent2"
+                className="group inline-flex h-12 w-full items-center justify-center gap-3 bg-accent px-4 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-ink transition-colors hover:bg-accent2 sm:w-auto sm:px-7"
               >
                 View Projects
                 <ArrowDown size={14} strokeWidth={2} className="transition-transform duration-300 group-hover:translate-y-0.5" />
@@ -156,7 +156,7 @@ export default function Hero({ booted }: { booted: boolean }) {
               <a
                 href={profile.resumePath}
                 download={profile.resumeFileName}
-                className="group inline-flex h-12 items-center gap-3 border border-line2 px-7 font-mono text-[12px] uppercase tracking-[0.16em] text-paper transition-colors hover:border-accent/70 hover:text-accent2"
+                className="group inline-flex h-12 w-full items-center justify-center gap-3 border border-line2 px-4 font-mono text-[12px] uppercase tracking-[0.16em] text-paper transition-colors hover:border-accent/70 hover:text-accent2 sm:w-auto sm:px-7"
               >
                 <FileDown size={14} strokeWidth={1.75} />
                 Download Résumé
@@ -164,7 +164,7 @@ export default function Hero({ booted }: { booted: boolean }) {
             </div>
 
             {/* Socials */}
-            <div {...stage(entered, 420)} className={cn(stage(entered, 420).className, "mt-12 flex items-center gap-8")}>
+            <div {...stage(entered, 420)} className={cn(stage(entered, 420).className, "mt-12 flex flex-wrap items-center gap-x-8 gap-y-4")}>
               <span className="mono-label text-faint">Find me</span>
               <span className="h-px w-8 bg-line2" aria-hidden="true" />
               <a
@@ -191,7 +191,7 @@ export default function Hero({ booted }: { booted: boolean }) {
           </div>
 
           {/* ── Right column — portrait ── */}
-          <div className="lg:col-span-5 lg:pl-10">
+          <div className="min-w-0 lg:col-span-5 lg:pl-10">
             <div {...stage(entered, 300)} className={cn(stage(entered, 300).className, "relative mx-auto max-w-[380px] lg:ml-auto lg:max-w-none")}>
               <Portrait />
               <ConfigCard entered={entered} />

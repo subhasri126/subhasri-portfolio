@@ -29,6 +29,14 @@ export default function Nav() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   // Sub-sections fold into their nearest nav chapter for the active state.
   const navActive = active.id === "achievements" || active.id === "education" ? "journey" : active.id;
 
@@ -51,7 +59,7 @@ export default function Nav() {
             <span className="caret text-accent">_</span>
           </a>
 
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-7 min-[1025px]:flex" aria-label="Primary">
             {navLinks.map((l) => (
               <a
                 key={l.id}
@@ -99,7 +107,9 @@ export default function Nav() {
             <button
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className="flex h-9 w-9 items-center justify-center text-paper lg:hidden"
+              aria-expanded={open}
+              aria-controls="mobile-navigation"
+              className="flex h-11 w-11 items-center justify-center text-paper min-[1025px]:hidden"
             >
               <Menu size={19} strokeWidth={1.75} />
             </button>
@@ -116,6 +126,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       <div
+        id="mobile-navigation"
         className={cn(
           "fixed inset-0 z-[80] flex flex-col bg-ink transition-all duration-500",
           open ? "visible opacity-100" : "invisible opacity-0"
@@ -130,19 +141,19 @@ export default function Nav() {
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"
-            className="flex h-9 w-9 items-center justify-center text-paper"
+            className="flex h-11 w-11 items-center justify-center text-paper"
           >
             <X size={20} strokeWidth={1.5} />
           </button>
         </div>
-        <nav className="flex flex-1 flex-col justify-center gap-1 px-8" aria-label="Mobile">
+        <nav className="flex flex-1 flex-col justify-center gap-1 overflow-y-auto px-6 sm:px-8" aria-label="Mobile">
           {navLinks.map((l, i) => (
             <a
               key={l.id}
               href={`#${l.id}`}
               onClick={() => setOpen(false)}
               className={cn(
-                "group flex items-baseline gap-4 border-b border-line/70 py-5 transition-all duration-500",
+                "group flex min-h-11 items-baseline gap-4 border-b border-line/70 py-5 transition-all duration-500",
                 open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               )}
               style={{ transitionDelay: open ? `${120 + i * 55}ms` : "0ms" }}

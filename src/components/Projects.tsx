@@ -205,20 +205,20 @@ function ProjectDetail({
           <button
             onClick={() => onStep(-1)}
             aria-label="Previous project"
-            className="flex h-9 w-9 items-center justify-center border border-line text-mute transition-colors hover:border-accent/60 hover:text-paper"
+            className="flex h-11 w-11 items-center justify-center border border-line text-mute transition-colors hover:border-accent/60 hover:text-paper"
           >
             <ChevronLeft size={15} strokeWidth={1.75} />
           </button>
           <button
             onClick={() => onStep(1)}
             aria-label="Next project"
-            className="flex h-9 w-9 items-center justify-center border border-line text-mute transition-colors hover:border-accent/60 hover:text-paper"
+            className="flex h-11 w-11 items-center justify-center border border-line text-mute transition-colors hover:border-accent/60 hover:text-paper"
           >
             <ChevronRight size={15} strokeWidth={1.75} />
           </button>
           <button
             onClick={onClose}
-            className="group ml-2 flex h-9 items-center gap-2 border border-line px-4 font-mono text-[11px] uppercase tracking-[0.14em] text-mute transition-colors hover:border-accent/60 hover:text-paper"
+            className="group ml-2 flex h-11 items-center gap-2 border border-line px-3 font-mono text-[11px] uppercase tracking-[0.14em] text-mute transition-colors hover:border-accent/60 hover:text-paper sm:px-4"
           >
             Close
             <X size={14} strokeWidth={1.75} className="transition-transform duration-300 group-hover:rotate-90" />
