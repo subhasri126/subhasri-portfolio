@@ -48,14 +48,10 @@ function Portrait() {
             <span className="mono-label text-faint">portrait forthcoming</span>
           </div>
         )}
-        {/* corner tick */}
-        <div className="absolute right-3 top-3 font-mono text-[10px] tracking-[0.2em] text-paper/40">fig.01</div>
       </div>
 
       {/* caption */}
-      <div className="mt-6 flex items-center justify-between gap-4 font-mono text-[10.5px] tracking-[0.14em] text-faint">
-        <span className="min-w-0 break-all">/images/profile.jpg</span>
-        <span aria-hidden="true" className="h-px flex-1 bg-line" />
+      <div className="mt-6 flex items-center justify-end gap-4 font-mono text-[10.5px] tracking-[0.14em] text-faint">
         <span>4 : 5</span>
       </div>
     </div>
